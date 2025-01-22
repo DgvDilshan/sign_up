@@ -3,10 +3,15 @@ import 'package:sign_up/screens/signup_screen.dart';
 
 class welcomeButton extends StatelessWidget {
   const welcomeButton(
-      {super.key, this.buttonText, required this.onTap, this.color});
+      {super.key,
+      this.buttonText,
+      required this.onTap,
+      this.color,
+      this.textColor});
   final String? buttonText;
   final Widget? onTap;
   final Color? color;
+  final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +34,10 @@ class welcomeButton extends StatelessWidget {
           child: Text(
             buttonText!,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
+              color: textColor!,
             ),
           )),
     );
