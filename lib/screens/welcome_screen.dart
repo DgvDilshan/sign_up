@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up/screens/signin_screen.dart';
 import 'package:sign_up/screens/signup_screen.dart';
+import 'package:sign_up/theme/theme.dart';
 import 'package:sign_up/widegets/welcome_button.dart';
-
 import '../widegets/custom_scaffold.dart';
-// Fixed typo in "widgets"
 
 class WelcomeScreen extends StatelessWidget {
   // Changed 'welcomeScreen' to 'WelcomeScreen'
@@ -58,9 +57,9 @@ class WelcomeScreen extends StatelessWidget {
                   Expanded(
                       child: welcomeButton(
                     buttonText: 'Sign Up',
-                    onTap: SignupScreen(),
+                    onTap: const SignupScreen(),
                     color: Colors.white,
-                    textColor: Colors.red,
+                    textColor: lightColorScheme.primary,
                   )),
                 ],
               ),
