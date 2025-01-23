@@ -118,11 +118,66 @@ class _SigninScreenState extends State<SigninScreen> {
                             style: TextStyle(
                               color: Colors.black45,
                             ),
-                          )
+                          ),
                         ],
+                      ),
+                      GestureDetector(
+                        child: Text(
+                          'Forget password?',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: lightColorScheme.primary,
+                          ),
+                        ),
                       ),
                     ],
                   ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_fromSignInKey.currentState!.validate() &&
+                            rememberPassword) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Processing Data"),
+                            ),
+                          );
+                        } else if (!rememberPassword) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text(
+                                    'Please agree to the processing of personal data')),
+                          );
+                        }
+                      },
+                      child: const Text('Sign up'),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.7,
+                          // ignore: deprecated_member_use
+                          color: Colors.grey.withOpacity(0.5),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 0,
+                          horizontal: 5,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
