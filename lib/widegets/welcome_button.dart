@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/screens/signup_screen.dart';
 
-class welcomeButton extends StatelessWidget {
-  const welcomeButton(
-      {super.key,
-      this.buttonText,
-      required this.onTap,
-      this.color,
-      this.textColor});
+class WelcomeButton extends StatelessWidget {
+  const WelcomeButton(
+      {super.key, this.buttonText, this.onTap, this.color, this.textColor});
   final String? buttonText;
   final Widget? onTap;
   final Color? color;
@@ -25,21 +20,23 @@ class welcomeButton extends StatelessWidget {
         );
       },
       child: Container(
-          padding: const EdgeInsets.all(30.0),
-          decoration: BoxDecoration(
-              color: color!,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(50),
-              )),
-          child: Text(
-            buttonText!,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: textColor!,
-            ),
-          )),
+        padding: const EdgeInsets.all(30.0),
+        decoration: BoxDecoration(
+          color: color!,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(50),
+          ),
+        ),
+        child: Text(
+          buttonText!,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: textColor!,
+          ),
+        ),
+      ),
     );
   }
 }
